@@ -26,3 +26,33 @@ function getHumanChoice() {
     }
 }
 
+/* Initialize score */
+let humanScore = 0;
+let computerScore = 0;
+
+/* This function will play a single round of rock, paper, scissors. */
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log(`It's a tie! both choose ${humanChoice}`);
+        console.log(humanScore, computerScore);
+        return;
+    } 
+
+    if (
+        (humanChoice === "Rock" && computerChoice === "Scissors") ||
+        (humanChoice === "Paper" && computerChoice === "Rock") ||
+        (humanChoice === "Scissors" && computerChoice === "Paper") 
+    ) {
+        humanScore++;
+        console.log(`You win this round! ${humanChoice} beats ${computerChoice}`);
+        console.log(humanScore, computerScore);
+        return;
+    }
+    else {
+        computerScore++
+        console.log(`You lost this round! ${computerChoice} beats ${humanChoice}`);
+        console.log(humanScore, computerScore);
+    }
+}
+
+playRound(getHumanChoice(), getComputerChoice());
