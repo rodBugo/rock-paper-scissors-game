@@ -13,3 +13,4 @@ For this project I will be creating a simple rock, paper, scissors game using Ja
 
 ## What I learned
 
+From this project I learned how to create and use functions using Javascript, I also got comfortable with if/else statements and how to use the console from devtools on Chrome.
