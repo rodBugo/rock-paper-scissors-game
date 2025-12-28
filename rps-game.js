@@ -1,3 +1,14 @@
+/* Initialize score */
+let humanScore = 0;
+let computerScore = 0;
+
+
+/* DOM Elements */
+const resultDiv = document.getElementById("results");
+const scoreDiv = document.getElementById("score");
+const buttons = document.getElementById("button");
+
+
 /* This function gets the computer's choice at random. */
 function getComputerChoice() {
     let cpuChoice = Math.floor(Math.random() * 3);
