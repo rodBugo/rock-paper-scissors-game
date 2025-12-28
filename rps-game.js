@@ -6,7 +6,7 @@ let computerScore = 0;
 /* DOM Elements */
 const resultDiv = document.getElementById("results");
 const scoreDiv = document.getElementById("score");
-const buttons = document.getElementById("button");
+const buttons = document.querySelectorAll("button");
 
 
 /* This function gets the computer's choice at random. */
@@ -63,3 +63,24 @@ function checkWinner() {
         resultDiv.textContent = "You lost the game!";
     }
 }
+
+
+/* This function will disable buttons */
+function disableButtons() {
+    buttons.forEach(button => {
+        button.disable = true;
+    });
+}
+
+
+/* This function is for button event listeners */
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const humanChoice = button.id;
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    });
+});
+
+/* Initial score display */
+updateScore();
