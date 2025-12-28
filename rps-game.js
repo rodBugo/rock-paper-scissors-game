@@ -23,6 +23,26 @@ function getComputerChoice() {
 }
 
 
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        resultDiv.textContent = `It's a tie! Both chose ${humanChoice}`;
+        return;
+    } 
+    if (
+        (humanChoice === "Rock" && computerChoice === "Scissors") ||
+        (humanChoice === "Paper" && computerChoice === "Rock") ||
+        (humanChoice === "Scissors" && computerChoice === "Paper") 
+    ) {
+        humanScore++;
+        resultDiv.textContent = `You win this round! ${humanChoice} beats ${computerChoice}`;
+        return;
+    }
+    else {
+        computerScore++
+        resultDiv.textContent = `You lose this round! ${computerChoice} beats ${humanChoice}`;
+    }
+}
+
 
 /* This function will play the game for five rounds. */
 function playGame() {
